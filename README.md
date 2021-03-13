@@ -11,7 +11,7 @@
 ## Windows Client Setup
 
 1) Download [WindowsClient.zip](https://github.com/valheimPlus/ValheimPlus/releases/download/0.9.5/WindowsClient.zip)
-2) Unzip in SteamLibrary\steamapps\common\Valheim\valheim_Data
+2) Unzip in SteamLibrary\steamapps\common\Valheim
 3) Restart the game
 
 ## Server Configurations
