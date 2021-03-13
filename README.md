@@ -1,2 +1,676 @@
-# fishy-valheim-server
-Fishy Valheim Server
+# Fishy Valheim Server
+
+## General Information
+
+- Name: Fishy Valheim Plus
+- Version: 0.147.3+0.9.5
+- Valheim Plus: yes
+- Password: ASK ME
+- Host: 216.209.245.199:2456
+
+## Windows Client Setup
+
+1) Download [WindowsClient.zip](https://github.com/valheimPlus/ValheimPlus/releases/download/0.9.5/WindowsClient.zip)
+2) Unzip in SteamLibrary\steamapps\common\Valheim\valheim_Data
+3) Restart the game
+
+## Server Configurations
+
+`valheim_plus.cfg` contains:
+
+```text
+[AdvancedBuildingMode]
+; https://docs.unity3d.com/ScriptReference/KeyCode.html <- a list of keycodes
+
+; Change false to true to enable this section, if you set this to false the mode will not be accesible
+enabled=true
+
+; Enter the advanced building mode with this key when building
+enterAdvancedBuildingMode=F1
+
+; Exit the advanced building mode with this key when building
+exitAdvancedBuildingMode=F3
+
+; Copy the object rotation of the currently selected object in ABM
+copyObjectRotation=Keypad7
+
+; Apply the copied object rotation to the currently selected object in ABM
+pasteObjectRotation=Keypad8
+
+[AdvancedEditingMode]
+
+; Change false to true to enable this section, if you set this to false the mode will not be accesible
+enabled=true
+
+; https://docs.unity3d.com/ScriptReference/KeyCode.html <- a list of keycodes
+
+; Enter the advanced editing mode with this key
+enterAdvancedEditingMode=Keypad0
+
+; Reset the object to its original position and rotation
+resetAdvancedEditingMode=F7
+
+; Exit the advanced editing mode with this key and reset the object
+abortAndExitAdvancedEditingMode=F8
+
+; Confirm the placement of the object and place it
+confirmPlacementOfAdvancedEditingMode=KeypadEnter
+
+; Copy the object rotation of the currently selected object in AEM
+copyObjectRotation=Keypad7
+
+; Apply the copied object rotation to the currently selected object in AEM
+pasteObjectRotation=Keypad8
+
+[Beehive]
+
+; Change false to true to enable this section
+enabled=true
+
+; configure the speed at which the bees produce honey in seconds, 1200 seconds are 24 ingame hours
+honeyProductionSpeed=1200
+
+; configure the maximum amount of honey in beehives
+maximumHoneyPerBeehive=4
+
+; Instead of dropping the items, they will be placed inside nearby chests instead.
+autoDeposit=false
+
+; The range of the chest detection for the auto deposit feature. (Maximum is 50)
+autoDepositRange=10
+
+; Display the minutes and seconds until the beehive produces honey on hover
+showDuration=false
+
+[Building]
+
+; Change false to true to enable this section
+enabled=true
+
+; Remove some of the Invalid placement messages, most notably provides the ability to place objects into other objects
+noInvalidPlacementRestriction=false
+
+; Removes the weather damage from rain
+noWeatherDamage=false
+
+; The maximum range that you can place build objects at
+maximumPlacementDistance=5
+
+; The radius, in meters, in which a piece must be to contribute to the comfort level.
+; Default: 10
+pieceComfortRadius=10
+
+; When destroying a building piece, setting this to true will ensure it always drops full resources.
+; default: false
+alwaysDropResources=false
+
+; When destroying a building piece, setting this to true will ensure it always drops pieces that the devs have marked as "do not drop".
+; default: false
+alwaysDropExcludedResources=false
+
+; Setting this to true will cause repairing with the hammer to repair in a radius.
+enableAreaRepair=false
+
+; Sets the area repair radius. A value of 7.5 would mean your repair radius is 7.5m. Requires enableAreaRepair=true
+areaRepairRadius=7.5
+
+[Camera]
+
+; Change false to true to enable this section
+enabled=true
+
+; The maximum zoom distance to your character
+cameraMaximumZoomDistance=6
+
+; The maximum zoom distance to your character when in a boat
+cameraBoatMaximumZoomDistance=6
+
+; The game camera FOV
+cameraFOV=65
+
+[Experience]
+
+; Change false to true to enable this section
+enabled=true
+
+; Each of these values represent the increase to experience gained by +/- %
+; The value 50 would result in 50% increased experience gained for the respective skill by name.
+; The value -50 would result in -50% experience gained for the respective skill by name.
+swords=20
+knives=20
+clubs=20
+polearms=20
+spears=20
+blocking=20
+axes=20
+bows=20
+fireMagic=20
+frostMagic=20
+unarmed=20
+pickaxes=20
+woodCutting=20
+jump=20
+sneak=20
+run=20
+swim=20
+
+[Fermenter]
+
+; Change false to true to enable this section
+enabled=true
+
+; configure the time that the fermenter takes to produce its product, 2400 seconds are 48 ingame hours
+fermenterDuration=2400
+
+; configure the total amount of produced items from a fermenter
+fermenterItemsProduced=6
+
+; Display the minutes and seconds until the fermenter is done on hover
+showDuration=false
+
+[FireSource]
+
+; If set to true, all fire sources will stay at max fuel level once filled.
+; default: false
+enabled=true
+
+; If set to true, only torch-type fire sources will stay at max fuel level once filled. NOTE: Requires enabled=true above.
+; Applies to: wood torches, iron torches, green torches, sconces and brazier
+; default: false
+onlyTorches=false
+
+[Food]
+
+; Change false to true to enable this section
+enabled=true
+
+; Increase or reduce the time that food lasts by %. The value 50 would cause food to run out 50% slower.
+; Allows for - values to shorten food duration.
+foodDurationMultiplier=50
+
+; If set to true, this option prevents food degrading over time - in other words, it retains its maximum benefit until it expires.
+disableFoodDegradation=true
+
+[Smelter]
+
+; Change false to true to enable this section
+enabled=true
+
+; Maximum amount of ore in a smelter
+maximumOre=10
+
+; Maximum amount of coal in a smelter
+maximumCoal=20
+
+; The total amount of coal used to produce a single smelted ingot.
+coalUsedPerProduct=2
+
+; The time it takes for the smelter to produce a single ingot in seconds.
+productionSpeed=30
+
+; Instead of dropping the items, they will be placed inside nearby chests instead.
+autoDeposit=false
+
+; The range of the chest detection for the auto deposit feature. (Maximum is 50)
+autoDepositRange=10
+
+[Furnace]
+
+; Change false to true to enable this section
+enabled=true
+
+; Maximum amount of ore in a furnace
+maximumOre=30
+
+; Maximum amount of coal in a furnace
+maximumCoal=100
+
+; The total amount of coal used to produce a single smelted ingot.
+coalUsedPerProduct=2
+
+; The time it takes for the furnace to produce a single ingot in seconds.
+productionSpeed=10
+
+; Instead of dropping the items, they will be placed inside nearby chests instead.
+autoDeposit=true
+
+; The range of the chest detection for the auto deposit feature. (Maximum is 50)
+autoDepositRange=20
+
+[Game]
+
+; Change false to true to enable this section
+enabled=true
+
+; The games damage multiplier per person nearby in difficultyScaleRange(m) radius.
+gameDifficultyDamageScale=0.04
+
+; The games health multiplier per person nearby in difficultyScaleRange(m) radius.
+gameDifficultyHealthScale=0.4
+
+; Adds additional players to the difficulty calculation in multiplayer unrelated to the actual amount
+extraPlayerCountNearby=0
+
+; Sets the nearby player count always to this value + extraPlayerCountNearby
+setFixedPlayerCountTo=0
+
+; The range in meters at which other players count towards nearby players for the difficulty scale
+difficultyScaleRange=200
+
+; If you set this to true, all portals will be disabled
+disablePortals=false
+
+[Hotkeys]
+; https://docs.unity3d.com/ScriptReference/KeyCode.html <- a list of keycodes
+
+; Change false to true to enable this section
+enabled=true
+
+; Roll forwards on key pressed
+rollForwards=F9
+
+; Roll backwards on key pressed
+rollBackwards=F10
+
+[Items]
+
+; Change false to true to enable this section
+enabled=true
+
+; Enables you to teleport with ores and other usually restricted objects
+noTeleportPrevention=true
+
+; Increase or reduce item weight by % percent. The value -50 will reduce item weight of every object by 50%.
+baseItemWeightReduction=-50
+
+; Increase the size of all item stacks by %. The value 50 would set a usual item stack of 100 to be 150.
+itemStackMultiplier=50
+
+; Set duration that dropped items live before despawning. Game default is 3600 seconds.
+droppedItemOnGroundDurationInSeconds=3600
+
+[Hud]
+
+; Change false to true to enable this section
+enabled=true
+
+; Shows the required amount of items AND the amount of items in your inventory in build mode and while crafting.
+showRequiredItems=true
+
+; Shows small notifications about all skill experienced gained in the top left corner.
+experienceGainedNotifications=true
+
+; Shows current and max stamina numerically underneath the stamina bar.
+displayStaminaValue=true
+
+; Set to true to remove the red screen flash overlay when the player takes damage.
+removeDamageFlash=false
+
+[Gathering]
+
+; Change false to true to enable this section
+enabled=true
+
+; Modify the chance to drop resources from resource nodes affected by this category
+; This only works on resource nodes that do not have guaranteed drops
+; As example by default scrap piles in dungeons have a 20% chance to drop a item, if you set this option to 200, you will then have a 60% chance to drop iron.
+dropChance=0
+
+; Each of these values increase or reduce the dropped items from destroyed objects with tools (Stones, Trees, Resource nodes, etc.) by %
+; The value 50 will increase the dropped wood from trees from 10 to 15. The value -50 will reduce the amount of dropped wood from 10 to 5.
+wood=50
+stone=50
+fineWood=50
+coreWood=50
+elderBark=50
+ironScrap=50
+tinOre=50
+copperOre=50
+silverOre=50
+chitin=50
+
+[Durability]
+
+; Change false to true to enable this section
+enabled=true
+
+; Each of these values increase or reduce the durability of the specific item type by %
+; The value 50 will increase the durability from 100 to 150. The value -50 will reduce the durability from 100 to 50.
+axes=50
+pickaxes=50
+hammer=50
+cultivator=50
+hoe=50
+weapons=50
+armor=50
+bows=50
+shields=50
+torch=50
+
+[Armor]
+
+; Change false to true to enable this section
+enabled=true
+
+; Each of these values increase or reduce the armor of the specific item type by %
+; The value 50 will increase the armor from 14 to 21. The value -50 will reduce the durability from 14 to 7.
+helmets=0
+chests=0
+legs=0
+capes=0
+
+
+[Kiln]
+
+; Change false to true to enable this section
+enabled=true
+
+; Maximum amount of wood in a Kiln
+maximumWood=100
+
+; The time it takes for the Kiln to produce a single piece of coal in seconds.
+productionSpeed=10
+
+; Instead of dropping the items, they will be placed inside nearby chests instead.
+autoDeposit=true
+
+; The range of the chest detection for the auto deposit feature. (Maximum is 50)
+autoDepositRange=20
+
+[Map]
+
+; Change false to true to enable this section
+enabled=true
+
+; With this enabled you will receive the same exploration progression as other players on the server
+; This will also enable the option for the server to sync everyones exploration progression on connecting to the server.
+shareMapProgression=true
+
+; The radius of the map that you explore when moving
+exploreRadius=200
+
+; Prevents you and other people on the server to turn off their map sharing option
+preventPlayerFromTurningOffPublicPosition=true
+
+
+[Player]
+
+; Change false to true to enable this section
+enabled=true
+
+; The base amount of carry weight of your character
+baseMaximumWeight=500
+
+; Increase the buff you receive to your carry weight from Megingjord's girdle
+baseMegingjordBuff=500
+
+; Increase auto pickup range of all items
+baseAutoPickUpRange=5
+
+; Disable all types of camera shake
+disableCameraShake=false
+
+; The base unarmed damage multiplied by your skill level.
+; 120 will result in a maximum of 12 damage when you have a skill level of 10.
+baseUnarmedDamage=200
+
+; When changed to true, you will not be permitted to place a crop within the grow radius of another crop
+cropNotifier=true
+
+; How many seconds each comfort level contributes to the rested bonus.
+; Default: 60
+restSecondsPerComfortLevel=120
+
+; Change the death penalty in percentage, where higher will increase the death penalty and lower will reduce it.
+; Example: -50 reduces the death penalty by 50%.
+; Example: 50 increases the death penalty by 50%.
+; Example: -100 disables the death penalty entirely.
+deathPenaltyMultiplier=0
+
+; If set to true, this option will automatically repair your equipment when you interact with the appropriate workbench.
+autoRepair=true
+
+; Boss buff duration (seconds)
+guardianBuffDuration=300
+
+; Boss buff cooldown (seconds)
+guardianBuffCooldown=1200
+
+
+[Server]
+
+; Change false to true to enable this section
+enabled=true
+
+; Modify the amount of players on your Server
+maxPlayers=20
+
+; Removes the requirement to have a server password
+disableServerPassword=false
+
+; This settings add a version control check to make sure that people that try to join your game or the server you try to join has V+ installed
+enforceMod=true
+
+; Changes whether the server will force it's config on clients that connect. Only affects servers.
+serverSyncsConfig=true
+
+; The total amount of data that the server and client can send per second in kilobyte
+dataRate=256
+
+
+[Stamina]
+; Each of these values allow for - values, 50 will increase the stamina cost by 50%, -50 will reduce the stamina cost by 50%
+; Change false to true to enable this section
+enabled=true
+
+; Changes the amount of stamina cost of using the dodge roll by %
+dodgeStaminaUsage=-75
+
+; Changes the stamina drain of being overweight by %
+encumberedStaminaDrain=-75
+
+; Changes the stamina cost of jumping by %
+jumpStaminaDrain=-75
+
+; Changes the stamina cost of running by %
+runStaminaDrain=-75
+
+; Changes the stamina drain by sneaking by %
+sneakStaminaDrain=-75
+
+; Changes the total amount of stamina recovered per second by %
+staminaRegen=0
+
+; Changes the delay until stamina regeneration sets in by %
+staminaRegenDelay=-50
+
+; Changes the stamina drain of swimming by %
+swimStaminaDrain=-75
+
+
+[StaminaUsage]
+; Change false to true to enable this section
+enabled=true
+; Each of these values modifies the stamina drain by %.
+; The value 50 would result in 50% more stamina cost.
+; The value -50 would result in 50% less stamina cost.
+axes=-50
+blocking=-50
+bows=-50
+clubs=-50
+knives=-50
+pickaxes=-50
+polearms=-50
+spears=-50
+swords=-50
+unarmed=-50
+hammer=-50
+hoe=-50
+cultivator=-50
+
+[StructuralIntegrity]
+
+; Change false to true to enable this section
+enabled=true
+
+; Disables the entire structural integrity system and allows for placement in free air, does not prevent building damage.
+disableStructuralIntegrity=false
+
+; Disables any damage from anything to all player built structures. Does not prevent damage from structural integrity.
+disableDamageToPlayerStructures=false
+
+; Disables any damage from anything to all player built boats
+disableDamageToPlayerBoats=false
+
+; Each of these values reduce the loss of structural integrity by % less. The value 100 would result in disabled structural integrity and allow placement in free air.
+wood=0
+stone=0
+iron=0
+hardWood=0
+
+[Time]
+
+; --- > THIS FEATURE IS STILL IN DEVELOPMENT AND IS RIGHT NOW DISABLED UNTIL FURTHER NOTICE
+
+; Change false to true to enable this section
+; enabled=false
+; Total amount of time one complete day and night circle takes to complete
+; totalDayTimeInSeconds=1800
+; Increase the speed at which time passes at night by %. The value 50 would result in a 50% reduced amount of night time. The value 0 would result in a 0% reduced amount (normal amount).
+; nightTimeSpeedMultiplier=0
+
+
+[Ward]
+
+; Change false to true to enable this section
+enabled=true
+
+; The range of wards by meters
+wardRange=50
+
+[Workbench]
+; Change false to true to enable this section
+enabled=true
+
+; Set the workbench radius in meters
+workbenchRange=50
+
+; Sets the workbench attachment (e.g. anvil) radius
+workbenchAttachmentRange=10
+
+; Disables the roof and exposure requirement to use a workbench
+disableRoofCheck=true
+
+[Wagon]
+
+; Change false to true to enable this section
+enabled=true
+
+; Change the base wagon physical mass of the wagon object
+wagonBaseMass=20
+
+; This value changes the game physical weight of wagons by +/- more/less from item weight inside. The value 50 would increase the weight by 50% more. The value -100 would remove the entire extra weight.
+wagonExtraMassFromItems=0
+
+[Inventory]
+
+; Change false to true to enable this section
+enabled=true
+
+; Player inventory number of rows (inventory is resized up to 6 rows, higher values will add a scrollbar)
+; default 4, min 4, max 20
+playerInventoryRows=6
+
+; Wood chest number of columns
+; default 5, 5 min, 8 max
+woodChestColumns=3
+
+; Wood chest number of rows (more than 4 rows will add a scrollbar)
+; default 2, min 2, 10 max
+woodChestRows=5
+
+; Personal chest number of columns
+; default 3, 3 min, 8 max
+personalChestColumns=5
+
+; Personal chest number of rows
+; default 2, 2 min, 20 max
+personalChestRows=10
+
+; Iron chests already have 8 columns by default but now you can lower it 
+; default 8, min 6, max 8
+ironChestColumns=8
+
+; Iron chest number of rows (more than 4 rows will add a scrollbar)
+; default 3, min 3, max 20
+ironChestRows=20
+
+; Cart (Wagon) inventory number of columns
+; default 8, min 6, max 8
+cartInventoryColumns=8
+
+; Cart (Wagon) inventory number of rows (more than 4 rows will add a scrollbar)
+; default 3, min 3, max 30
+cartInventoryRows=30
+
+; Karve (small boat) inventory number of columns
+; default 8, min 6, max 8
+karveInventoryColumns=8
+
+; Karve (small boat) inventory number of rows (more than 4 rows will add a scrollbar)
+; default 3, min 3, max 30
+karveInventoryRows=10
+
+; Longboat (large boat) inventory number of columns
+; default 8, min 6, max 8
+longboatInventoryColumns=8
+
+; Longboat (large boat) inventory number of rows (more than 4 rows will add a scrollbar)
+; default 3, min 3, max 30
+longboatInventoryRows=30
+
+; By default tools and weapons go into inventories top to bottom and other materials bottom to top. Set to true to make all items go into the inventory top to bottom.
+inventoryFillTopToBottom=false
+
+[FreePlacementRotation]
+
+; Change false to true to enable this section, if you set this to false the mode will not be accesible
+enabled=truev
+
+; Rotates placement marker by 1 degree with keep ability to attach to nearly pieces
+rotateY=LeftAlt
+rotateX=C
+rotateZ=V
+
+; Copy rotation of placement marker from target piece in front of you
+copyRotationParallel=F
+
+; Set rotation to be perpendicular to piece in front of you
+copyRotationPerpendicular=G
+
+[Shields]
+
+; Change false to true to enable this section, if you set this to false the mode will not be accesible
+enabled=true
+
+; Increase or decrease the block value on all shields in %. -50 would be 50% less block rating, 50 would be 50% more block rating.
+blockRating=50
+
+[FirstPerson]
+
+; Change false to true to enable this section
+enabled=true
+
+; Hotkey to enable First Person
+hotkey=F10
+
+; Default Field Of View to use
+defaultFOV=65.0
+
+; Hotkey to raise Field Of View
+raiseFOVHotkey=PageUp
+
+; Hotkey to lower Field Of View
+lowerFOVHotkey=PageDown
+
+```
